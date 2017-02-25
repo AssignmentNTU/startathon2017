@@ -46,11 +46,13 @@ function list_item(res){
 }
 
 function add_item(json_data){
+    item = mongoose.model('item', item_schema);
+
     //get item cals
     var item_name = json_data["item_name"];
-    var calories = scrapper_manager_lib.start_scrapping(item_name);
+    // var calories = scrapper_manager_lib.start_scrapping(item_name);
 
-    // var calories = 10;
+    var calories = 10;
     var item_save =  new item(
         {
             item_id: json_data['item_id'],
@@ -67,6 +69,8 @@ function add_item(json_data){
 
 
 function search_by_name(name_to_search){
+    item = mongoose.model('item', item_schema);
+
     item.find({
         "item_name" : { "$regex": name_to_search , $options: "i"}
     }, function(err, docs){
