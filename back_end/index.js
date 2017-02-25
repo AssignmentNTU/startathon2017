@@ -25,16 +25,15 @@ router.get('/', function(req, res) {
 });
 
 router.get('/list_item', function(req, res){
-    list_item =  item_manager_lib.list_item();
-    res.json({data:  list_item});
+    list_item =  item_manager_lib.list_item(res);
 });
 
 router.post('/add_item', function(req, res){
-    item_manager_lib.add_item(req['data']);
+    item_manager_lib.add_item(req.body);
     res.json({'success': true});
 });
 
-router.get('/recommend', function(req, res){
+router.get('/search', function(req, res){
 
 });
 
