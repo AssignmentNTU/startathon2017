@@ -24,6 +24,19 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
 });
 
+router.get('/list_item', function(req, res){
+    list_item =  item_manager_lib.list_item();
+    res.json({data:  list_item});
+});
+
+router.post('/add_item', function(req, res){
+    item_manager_lib.add_item(req['data']);
+    res.json({'success': true});
+});
+
+router.get('/recommend', function(req, res){
+
+});
 
 
 app.use('/api', router);
