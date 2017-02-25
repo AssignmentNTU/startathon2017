@@ -32,6 +32,7 @@ module.exports = {
 
 function init(){
     mongoose.connect('mongodb://localhost/mydb');
+    console.log("conection",mongoose.connection.readyState);
     item = mongoose.model('item', item_schema);
 }
 
@@ -48,6 +49,8 @@ function list_item(res){
 }
 
 function add_item(json_data){
+   console.log("conection",mongoose.connection.readyState);
+
     item = mongoose.model('item', item_schema);
 
     //get item cals
