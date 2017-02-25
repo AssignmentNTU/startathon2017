@@ -48,9 +48,9 @@ function list_item(res){
 function add_item(json_data){
     //get item cals
     var item_name = json_data["item_name"];
-    // var amount = scrapper_manager_lib.start_scrapping(item_name);
+    var calories = scrapper_manager_lib.start_scrapping(item_name);
 
-    var calories = 10;
+    // var calories = 10;
     var item_save =  new item(
         {
             item_id: json_data['item_id'],
@@ -60,12 +60,9 @@ function add_item(json_data){
             amount: json_data['amount']
         }
     );
-    console.log(item_save);
     item_save.save(function(err, success){
-        console.log("err ",err);
-        console.log("success", success);
+        return true;
     });
-    return true;
 }
 
 
