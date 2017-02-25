@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.16.1",
+    "cordova": "^6.5.0",
     "express": "^4.14.1",
+    "ionic": "^2.2.1",
     "mongoose": "^4.8.4"
   },
   "devDependencies": {},
