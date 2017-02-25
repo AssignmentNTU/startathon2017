@@ -37,12 +37,17 @@ function init(){
 
 function list_item(res){
 // get all the users
-    item.find({}, function(err, items) {
-        console.log("items",items);
-        console.log("err", err);
-        if (err) throw err;
-        return res.json({data:  items});
-    });
+    item = mongoose.model('item', item_schema);
+    if(item != null) {
+        item.find({}, function (err, items) {
+            console.log("items", items);
+            console.log("err", err);
+            if (err) throw err;
+            return res.json({data: items});
+        });
+    }else{
+        return res.json({data: "Fails"});
+    }
 }
 
 function add_item(json_data){
