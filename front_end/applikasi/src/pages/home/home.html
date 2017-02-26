@@ -1,11 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Recommendations</ion-title>
+    <ion-title>Recommended</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div *ngFor="let post of posts">
+  <!--<div *ngFor="let post of posts">
     <h5 align="center"><strong>{{post.title}}</strong></h5>
     <div style="width: 100%; overflow: hidden;">
       <div style="width: 100px; float: left"><img style="width: 100px; height: 75px;"
@@ -13,14 +13,27 @@
       </div>
       <div style="margin-left: 33%;">
         <ul>
-          <li>Food2Fork URL: <a href={{post.f2f_url}}>Click here</a></li>
-          <li>Publisher: {{post.publisher}}</li>
-          <li>Publisher URL: <a href={{post.publisher_url}}>Click here</a></li>
-          <li>Social Rank: {{post.social_rank}}</li>
-        </ul>
-      </div>
-    </div>
+          <!--<li>Food2Fork URL: <a href={{post.f2f_url}}></a></li>-->
+          <!--<li>{{post.publisher}}</li>-->
+          <!--<li>Publisher URL: <a href={{post.publisher_url}}>Click here</a></li>-->
+          <!--<li>Social Rank: {{post.social_rank}}</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
     <!--<p>{{post.recipes.1.recipe_id}}</p>-->
-  </div>
+  <!--</div>-->
+
+
+<ion-list>
+  <ion-item *ngFor="let post of posts">
+    <ion-thumbnail item-left>
+      <a href="href={{post.f2f_url}}"><img style="width: 50px; height: 50px;" src={{post.image_url}}/></a>
+    </ion-thumbnail>
+    <h2>{{post.title}}</h2>
+    <p>{{post.publisher}}</p>
+    <p>Social Rank: {{post.social_rank}}</p>
+  </ion-item>
+</ion-list>
+
   <hr/>
 </ion-content>
