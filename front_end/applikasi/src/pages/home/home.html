@@ -1,17 +1,26 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Recommendations</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div *ngFor="let post of posts">
+    <h5 align="center"><strong>{{post.title}}</strong></h5>
+    <div style="width: 100%; overflow: hidden;">
+      <div style="width: 100px; float: left"><img style="width: 100px; height: 75px;"
+      src={{post.image_url}} alt="Food item"/>
+      </div>
+      <div style="margin-left: 33%;">
+        <ul>
+          <li>Food2Fork URL: <a href={{post.f2f_url}}>Click here</a></li>
+          <li>Publisher: {{post.publisher}}</li>
+          <li>Publisher URL: <a href={{post.publisher_url}}>Click here</a></li>
+          <li>Social Rank: {{post.social_rank}}</li>
+        </ul>
+      </div>
+    </div>
+    <!--<p>{{post.recipes.1.recipe_id}}</p>-->
+  </div>
+  <hr/>
 </ion-content>
