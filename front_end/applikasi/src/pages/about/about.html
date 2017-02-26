@@ -1,11 +1,57 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+<!--<ion-list>
+  <ion-item class="item-thumbnail-left" *ngFor="let item of posts; let i = index">
+    <img class="alignRight" src={{images[i]}}>
+    <h2 class="alignLeft">{{item.item_name}}</h2>
+    <p class="alignLeft">{{item.amount}} {{item.unit}}</p>
+  </ion-item>
+</ion-list>-->
+
+<!--<div class="list card">
+  <div class="item item-thumbnail-left" *ngFor="let item of posts; let i = index">
+    <img class="alignRight" src={{images[i]}}>
+    <h2>{{item.item_name}}</h2>
+    <p>{{item.amount}} {{item.unit}}</p>
+  </div>
+</div>-->
+
+<!--<ion-card *ngFor="let item of posts; let i = index">
+  <img src={{images[i]}}/>
+  <ion-card-content>
+    <ion-card-title>
+      {{item.item_name}}
+      </ion-card-title>
+    <p>
+      {{item.amount}} {{item.unit}}
+    </p>
+  </ion-card-content>
+</ion-card>-->
+
+<!--<ion-card class="item-thumbnail-left" *ngFor="let item of posts; let i = index">
+  <ion-thumbnail item-left>
+    <img src={{images[i]}}/>
+  </ion-thumbnail>
+  <ion-card-header>
+  {{item.item_name}}
+  </ion-card-header>
+  <ion-card-content>
+  {{item.amount}} {{item.unit}}
+ </ion-card-content>
+</ion-card>-->
+
+<ion-list>
+  <ion-item *ngFor="let item of posts; let i = index">
+    <ion-thumbnail item-left>
+      <img src={{images[i]}}/>
+    </ion-thumbnail>
+    <h2>{{item.item_name}}</h2>
+    <p>{{item.amount}} {{item.unit}}</p>
+  </ion-item>
+</ion-list>
 
 </ion-content>
