@@ -18,6 +18,7 @@ function start_scrapping(data){
 
     request(url_to_scrap , function(error, response, html){
         if(!error){
+            console.log("response", response);
             console.log("html",html);
         }
     })
